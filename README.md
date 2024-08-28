@@ -50,7 +50,7 @@ Para conseguir rodar a aplicação utilizei os seguintes requisitos:
 `Observações`: Poderia ser implementado dentro da aplicação o Spring Security com uma definição melhor do que é cada `Usuario`, dessa forma seria mais facil entender que o `Cliente` e o `Vendedor` teriam uma role `Comum` ja o `Master` teria a role `Admin`,
 Essa implementação deixaria mais robusta a aplicação e tambem garantiria que os Perfis tivessem cada um sua determinada tarefa, sendo somento o `Master` podendo ter dois perfis.
 
-## Beneficios de um código limpo e a Arquitetura de Camadas
+## Beneficios de um Código Limpo e a Arquitetura de Camadas
 
 - Os beneficios de ter um código limpo e tambem uma arquitetura de camadas é para ter uma otima manutenibilidade da aplicação, dessa forma fica mais facil encontrar bugs e corrigir problemas, pois na arquitetura de camada tudo fica bem estruturado e explicado
   sendo assim diminui o nivel de complexidade para o entedimento, não sobrecarrega o sistema pois cada Classe é responsavel por algum tipo de atividade, e tambem torna o sistema mais flexivel e escalavel pois cada camada é testada e feita separadamente
