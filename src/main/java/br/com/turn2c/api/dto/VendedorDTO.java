@@ -2,7 +2,6 @@ package br.com.turn2c.api.dto;
 
 
 import br.com.turn2c.api.entity.enums.Perfil;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 
@@ -19,6 +18,10 @@ public class VendedorDTO {
     private String vendasRealizadas;
     @NotEmpty
     private Set<Perfil> perfis = new HashSet<>();
+
+    public VendedorDTO(VendedorDTO vendedorDTO) {
+    }
+
 
     public Long getId() {
         return id;

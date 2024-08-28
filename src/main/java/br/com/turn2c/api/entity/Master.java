@@ -3,11 +3,17 @@ package br.com.turn2c.api.entity;
 
 import br.com.turn2c.api.entity.enums.Perfil;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Master extends Usuario{
 
 
@@ -16,22 +22,6 @@ public class Master extends Usuario{
     @Enumerated(EnumType.STRING)
     private Set<Perfil> perfis = new HashSet<>();
 
-    public Master(){
-    }
-
-    public Master(Set<Perfil> perfis) {
-        this.perfis = perfis;
-    }
-
-    public Master(Long id, String nome, String email, Set<Perfil> perfis) {
-        super(id, nome, email);
-        this.perfis = perfis;
-    }
-
-
-    public Set<Perfil> getPerfis() {
-        return perfis;
-    }
 
     public void setPerfis(Set<Perfil> perfis) {
         this.perfis = perfis;

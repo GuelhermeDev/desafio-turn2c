@@ -1,11 +1,7 @@
 package br.com.turn2c.api.service;
 
 
-import br.com.turn2c.api.entity.Cliente;
-import br.com.turn2c.api.entity.Master;
 import br.com.turn2c.api.entity.Usuario;
-import br.com.turn2c.api.entity.Vendedor;
-import br.com.turn2c.api.entity.enums.Perfil;
 import br.com.turn2c.api.repository.ClienteRepository;
 import br.com.turn2c.api.repository.MasterRepository;
 import br.com.turn2c.api.repository.UsuarioRepository;
@@ -14,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
+
 
 @Service
 public class MasterService {
@@ -44,7 +40,7 @@ public class MasterService {
     }
 
     public void excluir(Long id){
-        masterRepository.deleteById(id);
+        usuarioRepository.deleteById(id);
     }
 
     public Usuario atualizar(Usuario masterAtualizado){

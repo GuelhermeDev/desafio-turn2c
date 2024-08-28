@@ -15,17 +15,16 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/masters")
-@Tag(name = "Usuario", description = "Controlador de Usuários Master")
+@RequestMapping("/master")
+@Tag(name = "Admin", description = "Controlador de Usuários Master")
 public class MasterController {
 
     @Autowired
     private MasterService masterService;
 
-
     @GetMapping("lista-masters")
     @Operation(summary = "Buscar por Todos os Usuário", description = "Retorna todos usuário.")
-    public ResponseEntity<List<Usuario>> listarTudo(){
+    public ResponseEntity<List<Usuario>> listarTudo() {
         List<Usuario> lista = masterService.listarTudo();
         return ResponseEntity.ok(lista);
     }

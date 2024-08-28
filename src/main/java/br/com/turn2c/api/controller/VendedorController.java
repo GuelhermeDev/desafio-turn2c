@@ -1,7 +1,14 @@
 package br.com.turn2c.api.controller;
+
+
+import br.com.turn2c.api.dto.ClienteDTO;
 import br.com.turn2c.api.dto.VendedorDTO;
+import br.com.turn2c.api.service.ClienteService;
+
 import br.com.turn2c.api.service.VendedorService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
-@RequestMapping("/vendedores")
+@RequestMapping("/vendedor")
 @Tag(name = "Vendedor", description = "Controlador de Vendedores")
 public class VendedorController {
 
@@ -18,14 +26,16 @@ public class VendedorController {
     private VendedorService vendedorService;
 
 
-    @GetMapping("lista-vendedores")
-    public ResponseEntity<List<VendedorDTO>> listarTodos(){
-        List<VendedorDTO> vendedor = vendedorService.listarTodos();
-        return new ResponseEntity<>(vendedor, HttpStatus.OK);
+    @GetMapping("busca-todos-vendedores")
+    @Operation(summary = "Buscar por Todos os Vendedores", description = "Retorna todos vendedores.")
+    public ResponseEntity<List<VendedorDTO>> listarTodosVendedores(){
+        List<VendedorDTO> clientes = vendedorService.listarTodos();
+        return new ResponseEntity<>(clientes, HttpStatus.OK);
     }
 
-    @GetMapping("buscar-por-id/{id}")
-    public ResponseEntity<VendedorDTO> buscarPorId(@PathVariable Long id){
+    @GetMapping("buscar-vendedor-pelo-id/{id}")
+    @Operation(summary = "Buscar Vendedor por ID", description = "Retorna um vendedor com base no ID fornecido.")
+    public ResponseEntity<VendedorDTO> buscarVendedorPorId(@PathVariable Long id){
         VendedorDTO vendedorDTO = vendedorService.buscaPorId(id);
         if(vendedorDTO != null){
             return new ResponseEntity<>(vendedorDTO, HttpStatus.OK);
@@ -34,20 +44,23 @@ public class VendedorController {
         }
     }
 
-    @PostMapping("incluir-vendedor")
+    @PostMapping("incluir-novo-vendedor")
+    @Operation(summary = "Criar Novo Vendedor", description = "Cria um novo vendedor.")
     public ResponseEntity<Void> criarVendedor(@RequestBody VendedorDTO vendedorDTO){
         vendedorService.salvar(vendedorDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @DeleteMapping("deletar-vendedor/{id}")
+    @DeleteMapping("deletar-vendedor-pelo-id/{id}")
+    @Operation(summary = "Deletar Vendedor", description = "Deleta um vendedor com base no ID fornecido.")
     public ResponseEntity<Void> deletarVendedor(@PathVariable Long id){
         vendedorService.excluir(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 
-    @PutMapping("atualizar-vendedor/{id}")
+    @PutMapping("atualiza-vendedor-pelo-id/{id}")
+    @Operation(summary = "Atualizar Vendedor", description = "Atualiza um vendedor existente com base no ID fornecido.")
     public ResponseEntity<VendedorDTO> atualizarVendedor(@PathVariable Long id, @RequestBody VendedorDTO vendedorDTO){
         VendedorDTO atualizaVendedorDTO = vendedorService.atualizar(id, vendedorDTO);
         if(atualizaVendedorDTO != null){
@@ -57,9 +70,7 @@ public class VendedorController {
         }
     }
 
+
+
+
 }
-
-
-
-
-

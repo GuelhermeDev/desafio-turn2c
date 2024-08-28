@@ -1,7 +1,6 @@
 package br.com.turn2c.api.dto;
 
 import br.com.turn2c.api.entity.enums.Perfil;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 
@@ -12,7 +11,6 @@ public class MasterDTO {
 
     private Long id;
     private String nome;
-    @Email
     private String email;
     @NotBlank
     private String cpf;

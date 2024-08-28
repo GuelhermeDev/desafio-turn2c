@@ -31,7 +31,7 @@ public class VendedorService {
 
     public VendedorDTO buscaPorId(Long id){
         Optional<Vendedor> vendedor = vendedorRepository.findById(id);
-        return vendedor.map(Mapper.INSTANCE::toDTOVendedor).orElseThrow(()-> new ResourceNotFoundException(id));
+        return vendedor.map(Mapper.INSTANCE::toDTOVendedor).orElse(null);
     }
 
     public VendedorDTO salvar(VendedorDTO vendedorDTO) {
