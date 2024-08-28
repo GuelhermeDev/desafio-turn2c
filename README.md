@@ -56,5 +56,4 @@ Essa implementação deixaria mais robusta a aplicação e tambem garantiria que
   sendo assim diminui o nivel de complexidade para o entedimento, não sobrecarrega o sistema pois cada Classe é repsonsavel por algum tipo de atividade, e tambem torna o sistema mais flexivel e escalavel pois cada camada é testada e feita separadamente
 
 
-### Criar um novo Cliente:
 
