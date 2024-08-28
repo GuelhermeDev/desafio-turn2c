@@ -31,9 +31,6 @@ Para o desenvolvimento foi seguido um padrão de camadas , implementado um CRUD 
 - **Persistência de Dados:**
   - Uso do Spring Data JPA para persistência de dados em um banco de dados relacional.
 
-- **Testes Unitários:**
-  - Testes para validar os serviços disponíveis, garantindo a integridade da aplicação.
-
 - **Documentação com Swagger OpenAPI:**
   - Documentação dos serviços REST utilizando Swagger para facilitar a integração e o entendimento da API.
 
@@ -53,37 +50,11 @@ Para conseguir rodar a aplicação utilizei os seguintes requisitos:
 `Observações`: Poderia ser implementado dentro da aplicação o String Security com uma definição melhor do que é cada `Usuario`, dessa forma seria mais facil entender que o `Cliente` e o `Vendedor` teriam uma role `Comum` ja o `Master` teria a role `Admin`,
 Essa implementação deixaria mais robusta a aplicação e tambem garantiria que os Perfis tivessem cada um sua determinada tarefa, sendo somento o `Master` podendo ter dois perfis.
 
+## Beneficios de um código limpo e a Arquitetura de Camadas
 
-## Modelo de Entidades
+- Os beneficios de ter um código limpo e tambem uma arquitetura de camadas é para ter uma otima manutenibilidade da aplicação, dessa forma fica mais facil encontrar bugs e corrigir problemas, pois na arquitetura de camada tudo fica bem estruturado e explicado
+  sendo assim diminui o nivel de complexidade para o entedimento, não sobrecarrega o sistema pois cada Classe é repsonsavel por algum tipo de atividade, e tambem torna o sistema mais flexivel e escalavel pois cada camada é testada e feita separadamente
 
-Na minha aplicação eu montei as Entidades dessa forma:
-
-### Entidades
-
-- **Usuario**
-  - `Long id`
-  - `String nome`
-  - `String email`
-
-- **Vendedor**
-  - `String comissao`
-  - `String vendasRealizadas`
-  - `Set<Perfil> perfis`
-
-- **Cliente**
-  - `String cpf`
-  - `String historicoCompras`
-  - `Set<Perfil> perfis`
-
-- **Master**
-  - `Set<Perfil> perfis`
-  - Pode ter perfis de `Vendedor` e `Cliente`
-
-### Perfis
-
-- Enumeração que define os tipos de perfis que um `Master` pode ter: `CLIENTE`, `VENDEDOR`, etc.
-
-## Exemplo de Uso
 
 ### Criar um novo Cliente:
 
