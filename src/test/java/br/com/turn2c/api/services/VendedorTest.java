@@ -1,7 +1,6 @@
 package br.com.turn2c.api.services;
 
-import br.com.turn2c.api.dto.ClienteDTO;
-import br.com.turn2c.api.dto.VendedorDTO;
+import br.com.turn2c.api.entity.dto.VendedorDTO;
 
 import br.com.turn2c.api.entity.Vendedor;
 import br.com.turn2c.api.entity.enums.Perfil;
@@ -20,7 +19,6 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.times;
 
 
 class VendedorTest {

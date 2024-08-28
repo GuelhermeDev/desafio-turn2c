@@ -1,6 +1,6 @@
 package br.com.turn2c.api.controller;
 
-import br.com.turn2c.api.dto.ClienteDTO;
+import br.com.turn2c.api.entity.dto.ClienteDTO;
 import br.com.turn2c.api.service.ClienteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

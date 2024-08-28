@@ -1,7 +1,7 @@
 package br.com.turn2c.api.service;
 
 
-import br.com.turn2c.api.dto.ClienteDTO;
+import br.com.turn2c.api.entity.dto.ClienteDTO;
 import br.com.turn2c.api.entity.Cliente;
 import br.com.turn2c.api.exceptions.ResourceNotFoundException;
 import br.com.turn2c.api.mapper.Mapper;

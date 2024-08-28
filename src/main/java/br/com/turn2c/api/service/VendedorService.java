@@ -2,16 +2,12 @@ package br.com.turn2c.api.service;
 
 
 
-import br.com.turn2c.api.dto.VendedorDTO;
+import br.com.turn2c.api.entity.dto.VendedorDTO;
 import br.com.turn2c.api.entity.Vendedor;
-import br.com.turn2c.api.exceptions.DatabaseException;
 import br.com.turn2c.api.exceptions.ResourceNotFoundException;
 import br.com.turn2c.api.mapper.Mapper;
 import br.com.turn2c.api.repository.VendedorRepository;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

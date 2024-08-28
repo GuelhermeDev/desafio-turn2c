@@ -1,4 +1,4 @@
-package br.com.turn2c.api.dto;
+package br.com.turn2c.api.entity.dto;
 
 import br.com.turn2c.api.entity.enums.Perfil;
 import jakarta.validation.constraints.NotBlank;

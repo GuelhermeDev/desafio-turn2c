@@ -1,4 +1,4 @@
-package br.com.turn2c.api.dto;
+package br.com.turn2c.api.entity.dto;
 
 
 import br.com.turn2c.api.entity.enums.Perfil;
@@ -8,19 +8,19 @@ import jakarta.validation.constraints.NotEmpty;
 import java.util.HashSet;
 import java.util.Set;
 
-public class VendedorDTO {
+
+public class ClienteDTO {
 
     private Long id;
     private String nome;
     @NotBlank
     private String email;
-    private String comissao;
-    private String vendasRealizadas;
+    @NotBlank
+    private String cpf;
+    @NotBlank
+    private String historicoCompras;
     @NotEmpty
     private Set<Perfil> perfis = new HashSet<>();
-
-    public VendedorDTO(VendedorDTO vendedorDTO) {
-    }
 
 
     public Long getId() {
@@ -47,20 +47,20 @@ public class VendedorDTO {
         this.email = email;
     }
 
-    public String getComissao() {
-        return comissao;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setComissao(String comissao) {
-        this.comissao = comissao;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public String getVendasRealizadas() {
-        return vendasRealizadas;
+    public String getHistoricoCompras() {
+        return historicoCompras;
     }
 
-    public void setVendasRealizadas(String vendasRealizadas) {
-        this.vendasRealizadas = vendasRealizadas;
+    public void setHistoricoCompras(String historicoCompras) {
+        this.historicoCompras = historicoCompras;
     }
 
     public Set<Perfil> getPerfis() {
@@ -70,4 +70,5 @@ public class VendedorDTO {
     public void setPerfis(Set<Perfil> perfis) {
         this.perfis = perfis;
     }
+
 }
