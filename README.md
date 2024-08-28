@@ -36,7 +36,7 @@ Para o desenvolvimento foi seguido um padrão de camadas , implementado um CRUD 
 
 - **Boas Práticas de Programação:**
   - Tentei aplicar o maximo possivel de SOLID e tambem Clean Code, possa ser que me falte experiência para conseguir montar um projeto melhor que consiga seguir 100% das melhores praticas, mas para esse `Desafio`, tentei aplicar oque conhecia e busquei um pouco mais.
-  - A implementação de outros patterns tambem possa ser que não tenha ficado das melhores, pois não trabalhei com muitos padrões diferentes de Facade e Component, mas acredito que possa aprender muito e nas proximas aplicações entregar eles de uma forma melhor.
+  - A implementação de outros patterns tambem possa ser que não tenha ficado das melhores, pois não trabalhei com muitos padrões diferentes de Facade e Composition, mas acredito que possa aprender muito e nas proximas aplicações entregar eles de uma forma melhor.
 
 ## Requisitos
 
